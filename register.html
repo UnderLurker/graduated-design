@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/input.css">
+    <title>注册</title>
+</head>
+
+<body>
+    <div class="flex-box">
+        <form action="#" method="post">
+            <div class="input-group">
+                <input type="text" id="UserName" required>
+                <div class="underline"></div>
+                <label for="UserName">姓名</label>
+            </div>
+            <div class="input-group">
+                <input type="text" id="UserEmail" aria-describedby="emailHelp" required>
+                <div class="underline"></div>
+                <label for="UserEmail">邮箱</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="UserPasswordFirst" required>
+                <div class="underline"></div>
+                <label for="UserPasswordFirst">密码</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="UserPasswordSecond" required>
+                <div class="underline"></div>
+                <label for="UserPasswordSecond">确认密码</label>
+            </div>
+            <div class="input-group">
+                <button type="submit" class="btn">注册</button>
+            </div>
+            <a class="login" href="./login.html">返回登录</a>
+        </form>
+    </div>
+</body>
+
+</html>
