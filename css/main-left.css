@@ -182,10 +182,14 @@ input:focus {
     position: relative;
     transition: 0.5s;
 }
-.list .frame:nth-child(1) {
+.search-frame{
+    min-width: 20%;
+}
+.list .search-frame:first-child,
+.list .frame:first-child {
     color: dodgerblue;
 }
-
+.search-frame:hover,
 .frame:hover {
     background-color: rgb(240, 239, 239);
 }

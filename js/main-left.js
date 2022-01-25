@@ -9,7 +9,7 @@ function frameOnClick(e){
     for (let i = 0; i < li_list.length; i++) {
         li_list[i].onclick = function (e) {
             var left=addRippleEffect(e,this,"rgba(30, 144, 255, .15)");
-            if (frameActive<0) return;
+            if (frameActive<0||i==frameActive) return;
             let width = this.getBoundingClientRect().width;
             this.style.color = "dodgerblue";
             li_list[frameActive].style.color='gray';
@@ -32,24 +32,22 @@ function frameOnClick(e){
     }
 }
 let searchFrameActive=0;
-let search_first_left=null;
 function searchFrameOnClick(e){
     let search_frame = document.getElementsByClassName('search-frame');
     let slider = document.getElementById('slider');
-    search_first_left=search_frame[0].getBoundingClientRect().left;
     //改变滑条的位置和大小
     // slider.style.width = "" + search_frame[0].getBoundingClientRect().width + "px";
     for (let i = 0; i < search_frame.length; i++) {
         search_frame[i].onclick = function (e) {
             var left=addRippleEffect(e,this,"rgba(30, 144, 255, .15)");
-            if (searchFrameActive<0) return;
+            if (searchFrameActive<0||i==searchFrameActive) return;
             let width = this.getBoundingClientRect().width;
             this.style.color = "dodgerblue";
             search_frame[searchFrameActive].style.color='gray';
 
             //改变滑条的位置和大小
             slider.style.width = width + "px";
-            slider.style.left = left-search_first_left + "px";
+            slider.style.left = left-first_left + "px";
 
             let contactList=document.getElementsByClassName('contact-list');
             let searchResultList=document.getElementsByClassName('search-result-list');
@@ -82,7 +80,6 @@ function dragFrame(e,name){
             let move=null;
             document.onmousemove=function(e){
                 move=e.clientX-disX;
-                console.log(move+","+width);
                 if(move>0||Math.abs(move)>width) return;
                 listObj.style.left=move+"px";
                 let sliderLeft=slider.getBoundingClientRect().left+move;
@@ -91,21 +88,28 @@ function dragFrame(e,name){
             document.onmouseup=function(){
                 document.onmousemove=null;
                 listObj.onmouseup=null;
-                autoSlider(slider);
+                if(flag){
+                    console.log("drag1");
+                    autoSlider(slider,'frame',frameActive);
+                }
+                else{
+                    console.log("drag2");
+                    autoSlider(slider,'search-frame',searchFrameActive);
+                }
             }
         }
     }
 }
+let flag=true;
+//flag true不查找false查找
 //slider自动归位
-function autoSlider(slider,name){
+function autoSlider(slider,name,active){
+    console.log("auto"+active);
     let li_list = document.getElementsByClassName(name);
-    for (let i = 0; i < li_list.length; i++){
-        if(li_list[i].style.color=="dodgerblue"){
-            let left=li_list[i].getBoundingClientRect().left;
-            slider.style.left = "" + left-first_left + "px";
-            break;
-        }
-    }
+    let left=li_list[active].getBoundingClientRect().left;
+    console.log(left);
+    slider.style.left = "" + left-first_left + "px";
+    
 }
 //left-search
 function leftSearchOnClick(){
@@ -127,16 +131,17 @@ function leftSearchOnClick(){
 
         contactList[frameActive].style.width="0";
         contactList[frameActive].style.opacity="0";
+        contactList[frameActive].style.display="none";
         searchResultList[searchFrameActive].style.width="100%";
         searchResultList[searchFrameActive].style.opacity="1";
         searchResultList[searchFrameActive].style.display="block";
 
         let search_frame = document.getElementsByClassName('search-frame');
         let slider = document.getElementById('slider');
-        search_first_left=search_frame[0].getBoundingClientRect().left;
-        // 改变滑条的位置和大小
         slider.style.width = "" + search_frame[0].getBoundingClientRect().width + "px";
-        autoSlider(slider,'search-frame');
+        // console.log("onfous");
+        autoSlider(slider,'search-frame',searchFrameActive);
+        flag=false;
         
     }
     searchCloseBtn.onclick=function(){
@@ -152,15 +157,17 @@ function leftSearchOnClick(){
         
         searchResultList[searchFrameActive].style.width="0";
         searchResultList[searchFrameActive].style.opacity="0";
+        searchResultList[searchFrameActive].style.display="none";
         contactList[frameActive].style.width="100%";
         contactList[frameActive].style.opacity="1";
+        contactList[frameActive].style.display="block";
 
         let li_list = document.getElementsByClassName('frame');
         let slider = document.getElementById('slider');
-        first_left=li_list[0].getBoundingClientRect().left;
-        //改变滑条的位置和大小
         slider.style.width = "" + li_list[0].getBoundingClientRect().width + "px";
-        autoSlider(slider,'frame');
+        // console.log("onclick");
+        autoSlider(slider,'frame',frameActive);
+        flag=true;
     }
 }
 
@@ -416,7 +423,6 @@ window.onload = function (e) {
     deleteSearchInput();
     dragFrame(e,'list');
     leftSearchOnClick();
-    dragFrame(e,'search-list');
 }
 
 //加载主聊天框
