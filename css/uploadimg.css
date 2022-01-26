@@ -1,3 +1,4 @@
+.create-chat-folder,
 .up-load{
     position: absolute;
     background-color: rgba(192, 192, 192,.5);
@@ -49,13 +50,14 @@
 #preview-img-canvas{
     width: 100%;
 }
+
 .bg-img{
     width: 8rem;
     height: 8rem;
     font-size: 8rem;
     color: silver;
 }
-.add-folder{
+#add-folder{
     padding: .5rem 0;
     width: 8rem;
     background-color: dodgerblue;
@@ -66,20 +68,38 @@
     border-radius: 2rem;
     cursor: pointer;
 }
-.add-folder div{
+#add-folder div{
     width: 2rem;
 }
-.add-folder span{
+#add-folder span{
     display: block;
     margin-left: -2rem;
 }
 .folder-items{
+    cursor: pointer;
     padding: 1rem 0;
     display: flex;
     border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.folder-setting{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    transition: all .5s;
+}
+.folder-setting:hover{
+    background-color: rgba(30, 144, 255,.15);
+    box-shadow: 0 0 .3rem gray;
 }
 .folder-items:hover{
-    background-color: whitesmoke;
+    background-color: rgb(243, 243, 243);
 }
 .folder-title{
     margin: 1rem;
@@ -90,4 +110,76 @@
     min-width: 4rem;
     margin: 0 1rem;
     font-size: 1.1rem;
+}
+.bg-img-bg{
+    background-color: whitesmoke;
+}
+.folder-form{
+    overflow-y: auto;
+}
+.folder-form::-webkit-scrollbar{
+    width: 6px;
+}
+.folder-form::-webkit-scrollbar-thumb{
+    border-radius: 1rem;
+    background-color: silver;
+}
+.folder-form::-webkit-scrollbar-track{
+    border-radius: 1rem;
+}
+.small-2{
+    width: 2rem;
+    height: 2rem;
+}
+.folder-contact-items{
+    cursor: pointer;
+    padding: .5rem 0;
+    display: flex;
+    line-height: 2rem;
+    border-radius: 4px;
+    position: relative;
+}
+.folder-contact-items span{
+    margin-left: 2rem;
+}
+.folder-contact-items div:last-child{
+    font-size: 1.2rem;
+    position: absolute;
+    right: 1rem;
+}
+#folder-contact-add{
+    padding: 1rem 3rem 0 3rem;
+}
+#folder-contact-add-btn{
+    display: flex;
+    color: dodgerblue;
+    line-height: 2rem;
+    font-size: 1.3rem;
+    padding: .5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.add-btn-icon{
+    width: 2rem;
+    height: 2rem;
+}
+.folder-contact-title{
+    margin-left: .5rem;
+    color: dodgerblue;
+    font-size: 1.5rem;
+}
+#folder-contact-add-btn:hover,
+.folder-contact-items:hover{
+    background-color: rgb(243, 243, 243);
+}
+.input-shadow{
+    /* margin: 0 3rem 3rem 3rem; */
+    width: 100%;
+    height: 5rem;
+    padding: 0 3rem;
+    box-shadow: 0 1px 3px black;
+}
+.blank{
+    height: 2.5rem;
+    background-color: whitesmoke;
 }
