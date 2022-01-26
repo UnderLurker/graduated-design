@@ -89,11 +89,11 @@ function dragFrame(e,name){
                 document.onmousemove=null;
                 listObj.onmouseup=null;
                 if(flag){
-                    console.log("drag1");
+                    // console.log("drag1");
                     autoSlider(slider,'frame',frameActive);
                 }
                 else{
-                    console.log("drag2");
+                    // console.log("drag2");
                     autoSlider(slider,'search-frame',searchFrameActive);
                 }
             }
@@ -104,10 +104,10 @@ let flag=true;
 //flag true不查找false查找
 //slider自动归位
 function autoSlider(slider,name,active){
-    console.log("auto"+active);
+    // console.log("auto"+active);
     let li_list = document.getElementsByClassName(name);
     let left=li_list[active].getBoundingClientRect().left;
-    console.log(left);
+    // console.log(left);
     slider.style.left = "" + left-first_left + "px";
     
 }
@@ -362,6 +362,13 @@ function userSetting(){
             leftNavMain.style.opacity="1";
             userSetting.style.width="0";
             userSetting.style.opacity="0";
+            
+            let settingBtn=document.getElementById('setting-btn');
+            let hidden=document.getElementById('hidden');
+            settingBtn.style.transform="rotate(0deg)";
+            settingBtn.innerHTML="<ion-icon name='ellipsis-vertical-outline'></ion-icon>";
+            hidden.style.height="0";
+            isHidden=true;
         }
     }
 }
@@ -423,6 +430,7 @@ window.onload = function (e) {
     deleteSearchInput();
     dragFrame(e,'list');
     leftSearchOnClick();
+    
 }
 
 //加载主聊天框

@@ -107,6 +107,7 @@ body {
     transition: 0.5s;
     overflow: hidden;
 }
+#folder-setting-close:hover,
 .user-setting-close:hover,
 .hidden-head-setting:hover,
 .hidden-head-close:hover,
@@ -312,6 +313,7 @@ input:focus {
     flex-grow: 1;
 }
 .first-info{
+    color: black;
     display: flex;
     align-items: center;
 }
@@ -435,6 +437,7 @@ input:focus {
     font-size: 1.5rem;
     position: relative;
 }
+#folder-setting-close,
 .user-setting-close,
 .hidden-head-close{
     width: 3rem;
@@ -490,6 +493,7 @@ input:focus {
     line-height: 3rem;
     margin: .5rem;
 }
+#folder-operation,
 .user-setting-hidden{
     width: 0;
     overflow: hidden;
