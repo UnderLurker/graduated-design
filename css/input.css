@@ -31,6 +31,32 @@ input[type=search]::-webkit-search-cancel-button{
     text-indent: .5rem;
     border-bottom: 2px solid #c0c0c0;
 }
+input[type=checkbox]{
+    width: 1.15rem;
+    height: 1.15rem;
+    outline: none;
+    -webkit-appearance: none;
+    position: relative;
+    vertical-align:middle;
+    border: 2px solid  silver;
+    border-radius: 50%;
+    transition: all .5s;
+    /* min-height: 14px;
+    min-width: 14px; */
+}
+input[type=checkbox]:checked {
+    background-color: dodgerblue;
+    border: none;
+    outline: none;
+}
+input[type=checkbox]:checked::after{
+    content: '\2714';
+    position: absolute;
+    background: transparent;
+    color: white;
+    line-height: 1.15rem;
+}
+
 .btn{
     background-color: #2980b9;
     color: white;

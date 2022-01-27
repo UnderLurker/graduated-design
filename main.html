@@ -570,11 +570,45 @@
                                 <span>添加成员</span>
                             </div>
                             <div class="folder-contact-list">
+                                <div class="folder-contact-items">
+                                    <div class="portrait small-2">
+                                        <img src="./image/1.jpeg" alt="">
+                                    </div>
+                                    <span>联系人名字</span>
+                                    <div class="small-2 ion-icon-center">
+                                        <ion-icon name="trash-outline"></ion-icon>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <input id="submit-new-folder" type="submit" hidden>
                     </form>
                 </div>
+            </div>
+            <div id="select-mumbers">
+                <div class="hidden-head">
+                    <div class="select-setting-close ion-icon-center">
+                        <ion-icon name="arrow-back-outline"></ion-icon>
+                    </div>
+                    <div class="hidden-head-title">
+                        <h4>添加联系人</h4>
+                    </div>
+                    <div class="select-setting ion-icon-center">
+                        <ion-icon name="checkmark-outline"></ion-icon>
+                    </div>
+                </div>
+                <form action="" method="get">
+                    <div class="select-list">
+                        <div class="select-mumbers-items">
+                            <div class="portrait small-3">
+                                <img src="./image/1.jpeg" alt="">
+                            </div>
+                            <label>联系人名字fsdfhsdkfksdjfk</label>
+                            <input class="checkbox-mumbers" type="checkbox">
+                        </div>
+                    </div>
+                    <input id="select-submit" type="submit" hidden>
+                </form>
             </div>
         </div>
         <div class="middle-chat">
@@ -1487,7 +1521,18 @@
         </div>
     </div>
     <div class="create-chat-folder">
-
+        <div class="img-frame shadow" style="width: 200px;">
+            <h3>移除联系人分组</h3><br>
+            <p>你确定要删除这个联系人分组吗？你的联系人分组将被删除</p>
+            <div class="options">
+                <div class="cancel">
+                    取消
+                </div>
+                <div class="ok">
+                    确定
+                </div>
+            </div>
+        </div>
     </div>
     <script src="./js/add-folder.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

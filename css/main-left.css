@@ -107,6 +107,7 @@ body {
     transition: 0.5s;
     overflow: hidden;
 }
+#select-setting-close:hover,
 #folder-setting-close:hover,
 .user-setting-close:hover,
 .hidden-head-setting:hover,
@@ -256,26 +257,36 @@ input:focus {
     display: flex;
     flex-direction: column;
 }
+.select-list,
 .search-result-list,
 .contact-list{
     width: 0%;
     display: none;
     transition: all 0.5s;
     opacity: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
+.select-list{
+    position: relative;
+}
+.select-list,
 .contact-list:nth-child(1){
     width: 100%;
     display: block;
     opacity: 1;
 }
-#scroll::-webkit-scrollbar{
+.select-list::-webkit-scrollbar,
+.contact-list::-webkit-scrollbar{
     width: 6px;
 }
-#scroll::-webkit-scrollbar-thumb{
+.select-list::-webkit-scrollbar-thumb,
+.contact-list::-webkit-scrollbar-thumb{
     border-radius: 1rem;
     background-color: silver;
 }
-#scroll::-webkit-scrollbar-track{
+.select-list::-webkit-scrollbar-track,
+.contact-list::-webkit-scrollbar-track{
     border-radius: 1rem;
 }
 .contact-info{
@@ -437,6 +448,7 @@ input:focus {
     font-size: 1.5rem;
     position: relative;
 }
+.select-setting-close,
 #folder-setting-close,
 .user-setting-close,
 .hidden-head-close{
@@ -493,6 +505,7 @@ input:focus {
     line-height: 3rem;
     margin: .5rem;
 }
+#select-mumbers,
 #folder-operation,
 .user-setting-hidden{
     width: 0;
