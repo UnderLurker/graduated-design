@@ -166,7 +166,7 @@
 }
 .chat-info-main p{
     padding: .5rem;
-    font-size: 1rem;
+    /* font-size: 16px; */
     background-color: whitesmoke;
     margin: 0;
 }

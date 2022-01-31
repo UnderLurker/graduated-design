@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/input.css">
     <link rel="stylesheet" href="./css/folder.css">
     <link rel="stylesheet" href="./css/uploadimg.css">
+    <link rel="stylesheet" href="./css/general-setting.css">
     <link href="https://cdn.bootcdn.net/ajax/libs/cropperjs/2.0.0-alpha.2/cropper.css" rel="stylesheet">
     <script src="./js/riff.js"></script>
     <script src="./js/main-left.js"></script>
@@ -417,6 +418,14 @@
                     </div>
                     <div class="user-setting-info-items">
                         <div class="ion-icon-center">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </div>
+                        <div>
+                            <span>通用设置</span>
+                        </div>
+                    </div>
+                    <div class="user-setting-info-items">
+                        <div class="ion-icon-center">
                             <ion-icon name="language-outline"></ion-icon>
                         </div>
                         <div>
@@ -529,6 +538,53 @@
                     </div>
                 </div>
             </div>
+            <div class="user-setting-hidden">
+                <div class="hidden-head">
+                    <div class="user-setting-close ion-icon-center riff">
+                        <ion-icon name="arrow-back-outline"></ion-icon>
+                    </div>
+                    <div class="hidden-head-title">
+                        <h4>通用设置</h4>
+                    </div>
+                </div>
+                <div class="general-setting" style="align-items: flex-start;margin-top: 0;">
+                    <div class="general-setting-items shadow-bottom">
+                        <span>设置</span>
+                        <div class="introduce">
+                            <label for="font-size-range">字体大小</label>
+                            <span>16</span>
+                        </div>
+                        <div class="font-size-setting">
+                            <div class="progress-line"></div>
+                            <input id="font-size-range" type="range" step="1" min="12" max="20">
+                        </div>
+                    </div>
+                    <div class="general-setting-items shadow-bottom">
+                        <span>键盘</span>
+                        <div class="keyboard-setting">
+                            <form action="" method="post">
+                                <div id="send-by-enter">
+                                    <input type="radio" class="input-radio" name="sendByEnter" id="sendByEnter" checked>
+                                    <label for="sendByEnter"></label>
+                                    <div class="keyboard-introduce">
+                                        <span>Enter发送</span>
+                                        <span>通过Shift+Enter发送新的一行</span>
+                                    </div>
+                                </div>
+                                <div id="send-by-ctrl-enter">
+                                    <input type="radio" class="input-radio" name="sendByEnter" id="sendByCtrlEnter">
+                                    <label for="sendByCtrlEnter"></label>
+                                    <div class="keyboard-introduce">
+                                        <span>Ctrl+Enter发送</span>
+                                        <span>通过Enter发送新的一行</span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="./js/general-setting.js"></script>
             <div id="folder-operation">
                 <div class="hidden-head">
                     <div id="folder-setting-close" class="ion-icon-center">
