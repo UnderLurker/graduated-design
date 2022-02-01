@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="./css/folder.css">
     <link rel="stylesheet" href="./css/uploadimg.css">
     <link rel="stylesheet" href="./css/general-setting.css">
-    <link href="https://cdn.bootcdn.net/ajax/libs/cropperjs/2.0.0-alpha.2/cropper.css" rel="stylesheet">
+    <!-- <link href="https://cdn.bootcdn.net/ajax/libs/cropperjs/2.0.0-alpha.2/cropper.css" rel="stylesheet"> -->
     <script src="./js/riff.js"></script>
     <script src="./js/main-left.js"></script>
     <script src="./js/circle-tailoring.js"></script>
     <!-- 图片裁剪 -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/cropperjs/2.0.0-alpha.2/cropper.js"></script>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/cropperjs/2.0.0-alpha.2/cropper.js"></script> -->
     <title>首页</title>
 </head>
 
@@ -50,13 +50,21 @@
                 <div id="hidden" class="shadow">
                     <div class="hidden-items">
                         <div class="hidden-items-icon ion-icon-center">
+                            <ion-icon name="moon-outline"></ion-icon>
+                        </div>
+                        <div class="hidden-items-context">
+                            <span>夜间模式</span>
+                        </div>
+                        <div class="switch" id="darkModel">
+                            <div class="switch-btn" id="dark"></div>
+                        </div>
+                    </div>
+                    <div class="hidden-items">
+                        <div class="hidden-items-icon ion-icon-center">
                             <ion-icon name="settings-outline"></ion-icon>
                         </div>
                         <div class="hidden-items-context">
                             <span>设置</span>
-                        </div>
-                        <div class="switch">
-
                         </div>
                     </div>
                 </div>
@@ -582,6 +590,13 @@
                             </form>
                         </div>
                     </div>
+                    <!-- 主题的选择 -->
+                    <!-- <div class="chat-bg shadow-bottom">
+                        <form action="" method="post">
+                            <input type="radio" name="theme" id="">
+                            <input type="file" name="theme" id="">
+                        </form>
+                    </div> -->
                 </div>
             </div>
             <script src="./js/general-setting.js"></script>

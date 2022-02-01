@@ -408,6 +408,7 @@ input:focus {
 .hidden-items{
     display: flex;
     padding: 0.1rem;
+    position: relative;
 }
 .hidden-items:hover{
     background-color: rgb(244, 244, 244);
@@ -426,12 +427,26 @@ input:focus {
     line-height: 2rem;
 }
 .switch{
+    box-sizing: content-box;
     position: absolute;
+    top: .5rem;
     right: 1rem;
     font-size: 1.3rem;
-    background-color: aqua;
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 1rem;
+    border-radius: 22px;
+    background-color: silver;
+}
+.switch-btn{
+    position: absolute;
+    top: -.15rem;
+    left: -2px;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid silver;
+    transition: all .5s;
 }
 #user-setting{
     width: 0;

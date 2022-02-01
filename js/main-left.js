@@ -344,7 +344,7 @@ function userSetting(){
     let hidden=document.getElementById('hidden');
     let leftNavMain=document.getElementById('left-nav-main');
     let userSetting=document.getElementById('user-setting');
-    for(var i=0;i<hiddenItems.length;i++){
+    for(var i=1;i<hiddenItems.length;i++){
         hiddenItems[i].onclick=function(){
             leftNavMain.style.width="0";
             leftNavMain.style.opacity="0";
@@ -430,7 +430,7 @@ window.onload = function (e) {
     deleteSearchInput();
     dragFrame(e,'list');
     leftSearchOnClick();
-    
+    darkModel();
 }
 
 //加载主聊天框
@@ -442,3 +442,19 @@ function onLoadChatMain(){
     chatMain.style.width="100%";
 }
 window.onresize=onLoadChatMain;
+
+function darkModel(){
+    let darkModel=document.getElementById('darkModel');
+    let flag=true;
+    darkModel.onclick=function(){
+        let dark=document.getElementById('dark');
+        if(flag){
+            dark.style.left="20px";
+            flag=false;
+        }
+        else{
+            dark.style.left="-2px";
+            flag=true
+        }
+    }
+}
