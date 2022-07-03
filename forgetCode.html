@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/register.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/input.css">
-    <title>注册</title>
+    <link rel="stylesheet" href="./css/register.css">
+    <title>忘记密码</title>
 </head>
-
 <body>
-    <div class="flex-box" id="app">
-        <!-- 注册方式选择 -->
-        <div class="register-way">
+    <div class="flex-box" style="height: 21rem;">
+        <div class="login-way">
             <ul>
                 <li>
-                    <span>邮箱注册</span>
+                    <span>邮箱</span>
                     <div id="slider"></div>
                 </li>
                 <li>
-                    <span>手机注册</span>
-                </li>
-                <li>
-                    <span>刷脸注册</span>
+                    <span>手机</span>
                 </li>
             </ul>
         </div>
-        
         <div class="register-main">
-            <!-- 邮箱注册 -->
             <form action="#" method="post">
                 <div class="input-group">
                     <input type="text" id="UserName" required>
@@ -42,23 +34,20 @@
                     <div class="underline"></div>
                     <label for="UserEmail">邮箱</label>
                 </div>
-                <div class="input-group">
-                    <input type="password" id="UserPasswordFirst" required>
-                    <div class="underline"></div>
-                    <label for="UserPasswordFirst">密码</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" id="UserPasswordSecond" required>
-                    <div class="underline"></div>
-                    <label for="UserPasswordSecond">确认密码</label>
+                <div style="white-space: nowrap;display: flex;align-items: flex-end;">
+                    <div class="input-group" style="display: inline-block;width: 50%">
+                        <input type="text" name="code" id="code">
+                        <div class="underline"></div>
+                        <label for="code">验证码</label>
+                    </div>
+                    <button class="btn" style="width: 50%;background-color: transparent;color: black;border: none;">发送验证码</button>
                 </div>
                 <span>{{errorEmailMsg}}</span>
                 <div class="input-group" style="padding-top: 1rem;">
-                    <button type="submit" class="btn">注册</button>
+                    <button type="submit" class="btn">确认</button>
                 </div>
-                <a class="login" href="login.html">返回登录</a>
+                <a class="login" href="register.html">返回登录</a>
             </form>
-            <!-- 手机注册 -->
             <form action="#" method="post">
                 <div class="input-group">
                     <input type="text" id="UserNamePhone" required>
@@ -70,32 +59,17 @@
                     <div class="underline"></div>
                     <label for="UserPhone">手机号</label>
                 </div>
-                <div class="input-group">
-                    <input type="password" id="UserPasswordFirstPhone" required>
-                    <div class="underline"></div>
-                    <label for="UserPasswordFirst">密码</label>
+                <div style="white-space: nowrap;display: flex;align-items: flex-end;">
+                    <div class="input-group" style="display: inline-block;width: 50%">
+                        <input type="text" name="code" id="code">
+                        <div class="underline"></div>
+                        <label for="code">验证码</label>
+                    </div>
+                    <button class="btn" style="width: 50%;background-color: transparent;color: black;border: none;">发送验证码</button>
                 </div>
-                <div class="input-group">
-                    <input type="password" id="UserPasswordSecondPhone" required>
-                    <div class="underline"></div>
-                    <label for="UserPasswordSecond">确认密码</label>
-                </div>
-                <span>{{errorEmailMsg}}</span>
+                <span>{{errorPhoneMsg}}</span>
                 <div class="input-group" style="padding-top: 1rem;">
-                    <button type="submit" class="btn">注册</button>
-                </div>
-                <a class="login" href="login.html">返回登录</a>
-            </form>
-            <!-- 刷脸注册 -->
-            <form action="#" method="post">
-                <div class="input-group">
-                    <input type="text" id="UserNameFace" required>
-                    <div class="underline"></div>
-                    <label for="UserName">刷脸</label>
-                </div>
-                <span>{{errorFaceMsg}}</span>
-                <div class="input-group" style="padding-top: 1rem;">
-                    <button type="submit" class="btn">注册</button>
+                    <button type="submit" class="btn">确认</button>
                 </div>
                 <a class="login" href="login.html">返回登录</a>
             </form>
@@ -103,18 +77,6 @@
     </div>
     <script src="./js/vue.js"></script>
     <script>
-        new Vue({
-            el:"#app",
-            data:{
-                errorEmailMsg:"123",
-                errorPhoneMsg:"phone",
-                errorFaceMsg:"face"
-            },
-            methods: {
-                
-            },
-        });
-
         var active=0;
         var li=document.getElementsByTagName('li');
         var form=document.getElementsByTagName('form');
@@ -126,13 +88,6 @@
                 }
                 if(j==active) return;
 
-                if(active==0||active==1){
-                    var input=document.getElementsByTagName('input');
-                    for(var i=active*4;i<(active+1)*4;i++){
-                        input[i].value="";
-                    }
-                }
-                
                 let left=this.getBoundingClientRect().left;
                 let slider=document.getElementById('slider');
                 this.style.color="dodgerblue";
@@ -148,5 +103,4 @@
         }
     </script>
 </body>
-
 </html>

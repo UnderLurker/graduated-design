@@ -431,6 +431,7 @@ window.onload = function (e) {
     dragFrame(e,'list');
     leftSearchOnClick();
     darkModel();
+    document.getElementsByClassName("contact-items")[0].click();
 }
 
 //加载主聊天框
@@ -438,7 +439,7 @@ function onLoadChatMain(){
     if(contactActive==-1) return;
     let chatMain=document.getElementById('chat-main');
     let bodyHeight=(window.innerHeight) ? window.innerHeight : (document.documentElement && document.documentElement.clientHeight) ? document.documentElement.clientHeight : document.body.offsetHeight;
-    chatMain.style.height=""+(bodyHeight-136)+"px";
+    chatMain.style.height=""+(bodyHeight-136-64-16*5)+"px";
     chatMain.style.width="100%";
 }
 window.onresize=onLoadChatMain;

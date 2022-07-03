@@ -1,0 +1,44 @@
+.container {
+    width: 640px;
+}
+
+.pos {
+    width: 640px;
+    height: 60px;
+    background: transparent;
+    margin-top: -7px;
+    position: relative;
+
+}
+
+#playBtn {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    cursor: pointer;
+}
+
+#progress {
+    height: 12px;
+    width: 320px;
+    position: absolute;
+    top: 24px;
+    left: 80px;
+    cursor: pointer;
+
+}
+
+.timebox {
+    position: absolute;
+    top: 20px;
+    left: 420px;
+    cursor: pointer;
+    color: white;
+}
+
+#full {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    cursor: pointer;
+}

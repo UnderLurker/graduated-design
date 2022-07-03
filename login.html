@@ -10,7 +10,7 @@
     <title>登录</title>
 </head>
 <body>
-    <div class="flex-box" style="height: 20rem;">
+    <div class="flex-box" style="height: 20rem;" id="login">
         <!-- 登录方式选择 -->
         <div class="login-way">
             <ul>
@@ -44,8 +44,9 @@
                     <div class="underline"></div>
                     <label for="UserPasswordFirst">密码</label>
                 </div>
-                <div class="input-group">
-                    <button type="submit" class="btn">登录</button>
+                <span>{{errorEmailMsg}}</span>
+                <div class="input-group" style="padding-top: 1rem;">
+                    <button type="submit" class="btn">注册</button>
                 </div>
                 <a class="login" href="register.html">返回注册</a>
             </form>
@@ -66,7 +67,8 @@
                     <div class="underline"></div>
                     <label for="UserPasswordFirst">密码</label>
                 </div>
-                <div class="input-group">
+                <span>{{errorPhoneMsg}}</span>
+                <div class="input-group" style="padding-top: 1rem;">
                     <button type="submit" class="btn">登录</button>
                 </div>
                 <a class="login" href="register.html">返回注册</a>
@@ -78,14 +80,27 @@
                     <div class="underline"></div>
                     <label for="UserName">刷脸</label>
                 </div>
-                <div class="input-group">
+                <span>{{errorFaceMsg}}</span>
+                <div class="input-group" style="padding-top: 1rem;">
                     <button type="submit" class="btn">登录</button>
                 </div>
                 <a class="login" href="register.html">返回注册</a>
             </form>
         </div>
     </div>
+    <script src="./js/vue.js"></script>
     <script>
+        new Vue({
+            el:"#login",
+            data:{
+                errorEmailMsg:"123",
+                errorPhoneMsg:"phone",
+                errorFaceMsg:"face"
+            },
+            methods: {
+                
+            },
+        });
         var active=0;
         var li=document.getElementsByTagName('li');
         var form=document.getElementsByTagName('form');

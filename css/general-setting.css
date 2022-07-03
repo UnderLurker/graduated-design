@@ -64,3 +64,27 @@
 .shadow-bottom{
     box-shadow: 0 1px 3px silver;
 }
+
+#editor{
+    color: black;
+    font-size: 1.5rem;
+}
+#editor:focus{
+    border: none;
+    outline: none;
+}
+#editor::-webkit-scrollbar{
+    display: none;
+}
+#editor[placeholder]:empty:focus::before{
+    content: "content";
+}
+
+#editor:empty:before{
+    content:attr(placeholder);
+    color:rgb(190, 198, 214);
+    margin-left: 5%
+}
+.coolapk-emotion{
+    margin: 1rem;
+}
